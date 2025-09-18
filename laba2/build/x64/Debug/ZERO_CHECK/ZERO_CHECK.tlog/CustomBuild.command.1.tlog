@@ -1,0 +1,10 @@
+^E:\GIT\LABA2\BUILD\CMAKEFILES\6718550AF3FBAB63609EDA82AB816595\GENERATE.STAMP.RULE
+setlocal
+E:\bin\cmake.exe -SE:/GIT/laba2 -BE:/GIT/laba2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/GIT/laba2/build/HelloWorld.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

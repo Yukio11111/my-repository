@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+# Явно указываем что хотим только конфигурацию
+if(NOT CMAKE_C_COMPILER)
+    message(WARNING "No C compiler found - generating configuration only")
+endif()
 
-# Добавляем исходные файлы
-add_executable(hello_world 
-    src/main.cpp 
-    src/util.cpp
-)
+if(NOT CMAKE_CXX_COMPILER)
+    message(WARNING "No C++ compiler found - generating configuration only")
+endif()
 
-# Включаем директорию с заголовками
+add_executable(hello_world src/main.cpp src/util.cpp)
 target_include_directories(hello_world PRIVATE include)
