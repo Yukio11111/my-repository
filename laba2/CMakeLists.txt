@@ -1,14 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
 
-# Явно указываем что хотим только конфигурацию
-if(NOT CMAKE_C_COMPILER)
-    message(WARNING "No C compiler found - generating configuration only")
-endif()
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-if(NOT CMAKE_CXX_COMPILER)
-    message(WARNING "No C++ compiler found - generating configuration only")
-endif()
+# Создаем STATIC библиотеку из util файлов
+add_library(util_lib STATIC src/util.cpp)
 
-add_executable(hello_world src/main.cpp src/util.cpp)
-target_include_directories(hello_world PRIVATE include)
+# Указываем где искать заголовки для библиотеки
+target_include_directories(util_lib PUBLIC include)
+
+# Создаем исполняемый файл
+add_executable(hello_world src/main.cpp)
+
+# Связываем библиотеку с исполняемым файлом
+target_link_libraries(hello_world PRIVATE util_lib)
