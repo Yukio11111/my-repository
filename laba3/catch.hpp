@@ -5998,7 +5998,6 @@ namespace Catch {
             Cyan,
             Yellow,
             Grey,
-
             Bright = 0x10,
 
             BrightRed = Bright | Red,
@@ -6998,7 +6997,6 @@ namespace Catch {
             sample resample(URng& rng, int resamples, Iterator first, Iterator last, Estimator& estimator) {
                 auto n = last - first;
                 std::uniform_int_distribution<decltype(n)> dist(0, n - 1);
-
                 sample out;
                 out.reserve(resamples);
                 std::generate_n(std::back_inserter(out), resamples, [n, first, &estimator, &dist, &rng] {
@@ -13998,7 +13996,6 @@ namespace Catch {
     void TagAliasRegistry::add( std::string const& alias, std::string const& tag, SourceLineInfo const& lineInfo ) {
         CATCH_ENFORCE( startsWith(alias, "[@") && endsWith(alias, ']'),
                       "error: tag alias, '" << alias << "' is not of the form [@alias name].\n" << lineInfo );
-
         CATCH_ENFORCE( m_registry.insert(std::make_pair(alias, TagAlias(tag, lineInfo))).second,
                       "error: tag alias, '" << alias << "' already registered.\n"
                       << "\tFirst seen at: " << find(alias)->lineInfo << "\n"
