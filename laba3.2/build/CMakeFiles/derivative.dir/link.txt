@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/derivative.dir/src/main.cpp.o -o derivative  libderivative_lib.a 

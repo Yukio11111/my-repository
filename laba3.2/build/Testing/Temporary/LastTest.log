@@ -1,0 +1,51 @@
+Start testing: Sep 25 10:03 UTC
+----------------------------------------------------------
+1/2 Testing: GoogleTests
+1/2 Test: GoogleTests
+Command: "/workspaces/my-repository/laba3.2/build/tests/tests_google"
+Directory: /workspaces/my-repository/laba3.2/build/tests
+"GoogleTests" start time: Sep 25 10:03 UTC
+Output:
+----------------------------------------------------------
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from DerivativeTest
+[ RUN      ] DerivativeTest.LinearFunction
+[       OK ] DerivativeTest.LinearFunction (0 ms)
+[ RUN      ] DerivativeTest.QuadraticFunction
+[       OK ] DerivativeTest.QuadraticFunction (0 ms)
+[ RUN      ] DerivativeTest.TrigonometricFunction
+[       OK ] DerivativeTest.TrigonometricFunction (0 ms)
+[----------] 3 tests from DerivativeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"GoogleTests" end time: Sep 25 10:03 UTC
+"GoogleTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: Catch2Tests
+2/2 Test: Catch2Tests
+Command: "/workspaces/my-repository/laba3.2/build/tests/tests_catch2"
+Directory: /workspaces/my-repository/laba3.2/build/tests
+"Catch2Tests" start time: Sep 25 10:03 UTC
+Output:
+----------------------------------------------------------
+Randomness seeded to: 1853155162
+===============================================================================
+All tests passed (7 assertions in 3 test cases)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Catch2Tests" end time: Sep 25 10:03 UTC
+"Catch2Tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 25 10:03 UTC

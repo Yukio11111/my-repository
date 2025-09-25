@@ -1,0 +1,9 @@
+[submodule "laba3.2/laba3.2/thirdparty/googletest"]
+	path = laba3.2/laba3.2/thirdparty/googletest
+	url = https://github.com/google/googletest.git
+[submodule "laba3.2/thirdparty/googletest"]
+	path = laba3.2/thirdparty/googletest
+	url = https://github.com/google/googletest.git
+[submodule "laba3.2/thirdparty/catch2"]
+	path = laba3.2/thirdparty/catch2
+	url = https://github.com/catchorg/Catch2.git

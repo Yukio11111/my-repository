@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tests_google.dir/tests_google.cpp.o -o tests_google  ../libderivative_lib.a ../lib/libgtest.a ../lib/libgtest_main.a ../lib/libgtest.a 
