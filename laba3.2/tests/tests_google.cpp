@@ -20,10 +20,10 @@ TEST(DerivativeTest, QuadraticFunction) {
     double x = 3.0;
     
     
-    EXPECT_NEAR(numeric::DerivativeCalculator::centralDifference(square, x), 6.0, 1e-4);
-    EXPECT_NEAR(numeric::DerivativeCalculator::forwardDifference(square, x), 6.0, 1e-4);
-    EXPECT_NEAR(numeric::DerivativeCalculator::backwardDifference(square, x), 6.0, 1e-4);
-    EXPECT_NEAR(numeric::DerivativeCalculator::secondDerivative(square, x), 2.0, 1e-4);
+    EXPECT_NEAR(numeric::DerivativeCalculator::centralDifference(square, x), 8.0, 1e-4);
+    EXPECT_NEAR(numeric::DerivativeCalculator::forwardDifference(square, x), 8.0, 1e-4);
+    EXPECT_NEAR(numeric::DerivativeCalculator::backwardDifference(square, x), 8.0, 1e-4);
+    EXPECT_NEAR(numeric::DerivativeCalculator::secondDerivative(square, x), 3.0, 1e-4);
 }
 
 
