@@ -1,0 +1,3 @@
+/workspaces/my-repository/laba4/build/CMakeFiles/tests_iomanip.dir
+/workspaces/my-repository/laba4/build/CMakeFiles/edit_cache.dir
+/workspaces/my-repository/laba4/build/CMakeFiles/rebuild_cache.dir
