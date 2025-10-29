@@ -148,5 +148,14 @@ Vector load_signal_from_bin(const std::string& filename) {
     file.close();
     return signal;
 }
-
+double calculate_difference_norm(const Vector& v1, const Vector& v2) {
+    if (v1.size() != v2.size()) {
+        return -1.0; 
+    }
+    double accum = 0.0;
+    for (size_t i = 0; i < v1.size(); ++i) {
+        accum += std::norm(v1[i] - v2[i]);
+    }
+    return std::sqrt(accum);
+}
 #endif // FFT_DIF_HPP
