@@ -14,15 +14,13 @@ void print_vector(const std::string& title, const Vector& vec) {
 int main() {
 
     // 2. Пример с загрузкой из файла
-    std::cout << "\n--- File Loading Example ---" << std::endl;
+    std::cout << "\n--- Пример загрузки файла ---" << std::endl;
     
-    // Укажите путь к вашему бинарному файлу. 
-    // Рекомендуется использовать файл с синусоидой для проверки.
     std::string filename = "../other_files/signal_3Hz_512pts.bin"; 
     
     Vector file_signal = load_signal_from_bin(filename);
     
-    std::cout << "Successfully loaded " << file_signal.size() << " samples from " << filename << std::endl;
+    std::cout << "Успешно загружен " << file_signal.size() << " образцы из " << filename << std::endl;
     
     std::cout << "Performing FFT on file data..." << std::endl;
     Vector file_spectrum = fft(file_signal);

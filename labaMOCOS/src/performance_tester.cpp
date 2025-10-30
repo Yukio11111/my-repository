@@ -1,4 +1,4 @@
-#include "fft.hpp" // Ваш заголовочный файл с БПФ
+#include "fft.hpp"
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -54,7 +54,6 @@ int main() {
         std::chrono::duration<double, std::milli> duration_fft = end_fft - start_fft;
 
         // --- Измеряем время ДПФ ---
-        // ВНИМАНИЕ: для N >= 2048 это может занять ОЧЕНЬ много времени!
         std::cout << std::flush; // Сбрасываем буфер вывода, чтобы видеть прогресс
         
         auto start_dft = std::chrono::high_resolution_clock::now();

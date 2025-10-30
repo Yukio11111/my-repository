@@ -1,7 +1,7 @@
-#include "fft.hpp" // Ваш заголовочный файл со всеми функциями (БПФ, загрузка, норма)
+#include "fft.hpp"
 #include <iostream>
 #include <vector>
-#include <chrono> // Для измерения времени
+#include <chrono>
 
 // --- Копируем сюда реализацию ПРЯМОЙ свертки из п. 5 ---
 Vector direct_convolution(const Vector& x, const Vector& y) {
@@ -77,7 +77,6 @@ int main() {
 
     // 3. Проверка процедуры из п. 5 (Прямая свертка)
     std::cout << "Проверка п. 5: Прямое вычисление свертки..." << std::endl;
-    std::cout << "ВНИМАНИЕ: Это ОЧЕНЬ медленная операция (O(N^2)) и может занять несколько минут!" << std::endl;
     
     auto start_direct = std::chrono::high_resolution_clock::now();
     Vector u_direct = direct_convolution(x, y);

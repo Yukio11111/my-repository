@@ -1,4 +1,4 @@
-#include "fft.hpp" // Ваш заголовочный файл с БПФ
+#include "fft.hpp"
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -34,10 +34,10 @@ int main() {
     Vector signal = load_signal_from_bin(signal_filename);
 
     if (signal.empty()) {
-        std::cerr << "Failed to load signal from " << signal_filename << ". Exiting." << std::endl;
+        std::cerr << "Не удалось загрузить сигнал из " << signal_filename << ". Exiting." << std::endl;
         return 1;
     }
-    std::cout << "Successfully loaded " << signal.size() << " samples from " << signal_filename << std::endl;
+    std::cout << "Успешно загружен " << signal.size() << " образцы из " << signal_filename << std::endl;
     std::cout << "--------------------------------------------------------" << std::endl;
 
 
@@ -51,27 +51,27 @@ int main() {
 
 
     // --- Пункт 3.2: Сравнение ДПФ и БПФ ---
-    std::cout << "Task 3.2: Comparing custom DFT and FFT results" << std::endl;
-    std::cout << "Calculating direct DFT (O(N^2)). This may take a moment..." << std::endl;
+    std::cout << "Task 3.2: Сравнение пользовательских результатов DFT и FFT" << std::endl;
+    std::cout << "Вычисление прямого DFT" << std::endl;
     // ВНИМАНИЕ: Для N=1024 это будет работать заметно дольше, чем БПФ!
     Vector spectrum_dft = dft_direct(signal);
     double dft_fft_diff = calculate_difference_norm(spectrum_dft, spectrum_fft);
-    std::cout << "Difference norm between DFT and FFT: " << std::scientific << dft_fft_diff << std::endl;
+    std::cout << "Норма разницы между DFT и FFT: " << std::scientific << dft_fft_diff << std::endl;
     std::cout << "--------------------------------------------------------" << std::endl;
 
 
     // --- Пункт 3.3: Сравнение с numpy.fft.fft ---
-    std::cout << "Task 3.3: Comparing custom FFT with numpy.fft.fft" << std::endl;
+    std::cout << "Task 3.3: Сравнение пользовательского FFT с numpy.fft.fft" << std::endl;
     std::string numpy_fft_filename = "../other_files/numpy_fft_1024.bin";
     Vector numpy_spectrum = load_signal_from_bin(numpy_fft_filename);
     
     if (numpy_spectrum.empty()) {
-        std::cerr << "Failed to load numpy spectrum. Exiting." << std::endl;
+        std::cerr << "Не удалось загрузить numpy spectrum. Exiting." << std::endl;
         return 1;
     }
     
     double numpy_fft_diff = calculate_difference_norm(spectrum_fft, numpy_spectrum);
-    std::cout << "Difference norm between custom FFT and NumPy FFT: " << std::scientific << numpy_fft_diff << std::endl;
+    std::cout << "Норма разницы между пользовательским FFT и NumPy FFT: " << std::scientific << numpy_fft_diff << std::endl;
     std::cout << "--------------------------------------------------------" << std::endl;
 
     return 0;

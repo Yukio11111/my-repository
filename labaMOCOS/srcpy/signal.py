@@ -18,7 +18,6 @@ def generate_sin_signal_bin(filename, length, frequency, sampling_rate):
     imag_part = np.zeros(length).astype(np.float64)
 
     # 3. Подготавливаем данные для записи (чередуем real и imag)
-    # Эта часть остается такой же, как у вас
     data_to_write = np.zeros(2 * length, dtype=np.float64)
     data_to_write[0::2] = real_part
     data_to_write[1::2] = imag_part
@@ -30,8 +29,8 @@ def generate_sin_signal_bin(filename, length, frequency, sampling_rate):
     print(f"Generated sine signal ({frequency} Hz) in {filename} with {length} elements")
 
 # --- Параметры сигнала ---
-FIXED_SIZE = 512       # Количество отсчетов (должно быть степенью двойки)
-SAMPLING_RATE = 128    # Частота дискретизации, Гц (выбрана для удобства)
+FIXED_SIZE = 512       # Количество отсчетов
+SAMPLING_RATE = 128    # Частота дискретизации, Гц 
 FREQUENCY = 3          # Частота нашей синусоиды, Гц
 
 # --- Создание файла ---
