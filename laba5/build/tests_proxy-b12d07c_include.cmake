@@ -1,0 +1,5 @@
+if(EXISTS "/workspaces/my-repository/laba5/build/tests_proxy-b12d07c_tests.cmake")
+  include("/workspaces/my-repository/laba5/build/tests_proxy-b12d07c_tests.cmake")
+else()
+  add_test(tests_proxy_NOT_BUILT-b12d07c tests_proxy_NOT_BUILT-b12d07c)
+endif()

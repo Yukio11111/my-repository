@@ -1,0 +1,9 @@
+/workspaces/my-repository/laba5/build/CMakeFiles/tests_proxy.dir
+/workspaces/my-repository/laba5/build/CMakeFiles/edit_cache.dir
+/workspaces/my-repository/laba5/build/CMakeFiles/rebuild_cache.dir
+/workspaces/my-repository/laba5/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+/workspaces/my-repository/laba5/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+/workspaces/my-repository/laba5/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/workspaces/my-repository/laba5/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+/workspaces/my-repository/laba5/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+/workspaces/my-repository/laba5/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir

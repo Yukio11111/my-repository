@@ -1,0 +1,14 @@
+# Target labels
+ catch2-populate
+# Source files and their labels
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate-complete.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-build.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-configure.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-download.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-install.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-mkdir.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-patch.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-test.rule
+/workspaces/my-repository/laba5/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-update.rule
