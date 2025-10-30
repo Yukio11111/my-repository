@@ -27,23 +27,10 @@ Vector dft_direct(const Vector& signal) {
     return spectrum;
 }
 
-// Функция для вычисления нормы разности L2
-double calculate_difference_norm(const Vector& v1, const Vector& v2) {
-    if (v1.size() != v2.size()) {
-        return -1.0; // Размеры не совпадают
-    }
-    double accum = 0.0;
-    for (size_t i = 0; i < v1.size(); ++i) {
-        // Вычисляем квадрат модуля разности
-        accum += std::norm(v1[i] - v2[i]);
-    }
-    return std::sqrt(accum);
-}
-
 
 int main() {
     // --- Загрузка сигнала для проверки ---
-    std::string signal_filename = "verification_data/signal_1024.bin";
+    std::string signal_filename = "../other_files/signal_1024.bin";
     Vector signal = load_signal_from_bin(signal_filename);
 
     if (signal.empty()) {
@@ -75,7 +62,7 @@ int main() {
 
     // --- Пункт 3.3: Сравнение с numpy.fft.fft ---
     std::cout << "Task 3.3: Comparing custom FFT with numpy.fft.fft" << std::endl;
-    std::string numpy_fft_filename = "verification_data/numpy_fft_1024.bin";
+    std::string numpy_fft_filename = "../other_files/numpy_fft_1024.bin";
     Vector numpy_spectrum = load_signal_from_bin(numpy_fft_filename);
     
     if (numpy_spectrum.empty()) {

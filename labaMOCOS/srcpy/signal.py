@@ -3,8 +3,8 @@ import os
 
 def generate_sin_signal_bin(filename, length, frequency, sampling_rate):
     """
-    Generate a real sine wave signal with a given frequency and save it to a
-    binary file where the imaginary part is zero.
+    Сгенерируем реальный синусоидальный сигнал с заданной частотой и сохраним его в
+    двоичный файл, где мнимая часть равна нулю.
     """
     # 1. Создаем временную шкалу
     # Длительность сигнала в секундах
@@ -36,11 +36,14 @@ FREQUENCY = 3          # Частота нашей синусоиды, Гц
 
 # --- Создание файла ---
 # Создаем директорию, если ее нет
-if not os.path.exists('performance_signals'):
-    os.makedirs('performance_signals')
+target_dir = '../other_files'
 
-# Имя файла
-fixed_file = f'performance_signals/signal_{FREQUENCY}Hz_{FIXED_SIZE}pts.bin'
+# Создаем директорию, если ее нет
+if not os.path.exists(target_dir):
+    os.makedirs(target_dir)
+
+# Имя файла с правильным путем
+fixed_file = f'{target_dir}/signal_{FREQUENCY}Hz_{FIXED_SIZE}pts.bin'
 
 # Генерируем и сохраняем сигнал
 generate_sin_signal_bin(fixed_file, FIXED_SIZE, FREQUENCY, SAMPLING_RATE)

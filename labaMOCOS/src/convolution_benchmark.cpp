@@ -27,7 +27,7 @@ Vector generate_random_signal(int size) {
 int main() {
     // --- СЛУЧАЙ 1: Одна последовательность фиксированной длины (512) ---
     std::cout << "Запуск бенчмарка для Случая 1 (один сигнал фиксирован = 512)..." << std::endl;
-    std::ofstream file1("fixed_length_benchmark.csv");
+    std::ofstream file1("../other_files/fixed_length_benchmark.csv");
     file1 << "N_variable,DirectConv_ms,FFTConv_ms" << std::endl;
     
     int fixed_size = 512;
@@ -63,7 +63,7 @@ int main() {
 
     // --- СЛУЧАЙ 2: Длины обеих последовательностей варьируются ---
     std::cout << "Запуск бенчмарка для Случая 2 (оба сигнала одинаковой длины)..." << std::endl;
-    std::ofstream file2("variable_length_benchmark.csv");
+    std::ofstream file2("../other_files/variable_length_benchmark.csv");
     file2 << "N,DirectConv_ms,FFTConv_ms" << std::endl;
 
     for (int n = 6; n <= 12; ++n) {

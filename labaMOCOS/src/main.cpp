@@ -18,7 +18,7 @@ int main() {
     
     // Укажите путь к вашему бинарному файлу. 
     // Рекомендуется использовать файл с синусоидой для проверки.
-    std::string filename = "performance_signals/signal_3Hz_512pts.bin"; 
+    std::string filename = "../other_files/signal_3Hz_512pts.bin"; 
     
     Vector file_signal = load_signal_from_bin(filename);
     

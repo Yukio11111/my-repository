@@ -4,7 +4,7 @@ import numpy as np
 
 # 1. Читаем данные из CSV файла, сгенерированного C++ программой
 try:
-    data = pd.read_csv('performance_data.csv')
+    data = pd.read_csv('../other_files/performance_data.csv')
 except FileNotFoundError:
     print("Ошибка: файл 'performance_data.csv' не найден.")
     print("Пожалуйста, сначала запустите C++ программу: ./performance_tester > performance_data.csv")
@@ -29,7 +29,7 @@ plt.xticks(data['N'], rotation=45) # Отмечаем все точки N на �
 
 # 6. Сохраняем график в файл и показываем его
 plt.tight_layout()
-plt.savefig('performance_graph.png')
+plt.savefig('../other_files/performance_graph.png')
 plt.show()
 
 print("График сохранен в файл 'performance_graph.png'")

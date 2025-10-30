@@ -75,8 +75,8 @@ Vector direct_convolution(const Vector& x, const Vector& y) {
 
 int main() {
     // 1. Загружаем две исходные последовательности
-    Vector x = load_signal_from_bin("convolution_data/x_sequence.bin");
-    Vector y = load_signal_from_bin("convolution_data/y_sequence.bin");
+    Vector x = load_signal_from_bin("../other_files/x_sequence.bin");
+    Vector y = load_signal_from_bin("../other_files/y_sequence.bin");
 
     if (x.empty() || y.empty()) {
         std::cerr << "Не удалось загрузить входные последовательности." << std::endl;
@@ -90,7 +90,7 @@ int main() {
     std::cout << "Свертка вычислена. Размер результата: " << u.size() << std::endl;
 
     // 3. Загружаем эталонный результат из NumPy для проверки
-    Vector numpy_conv = load_signal_from_bin("convolution_data/numpy_convolution.bin");
+    Vector numpy_conv = load_signal_from_bin("../other_files/numpy_convolution.bin");
     if (numpy_conv.empty()) {
         std::cerr << "Не удалось загрузить эталонную свертку NumPy." << std::endl;
         return 1;

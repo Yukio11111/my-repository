@@ -55,8 +55,8 @@ int main() {
     std::cout << "--- Вычисление свертки с помощью БПФ ---" << std::endl;
 
     // 1. Загружаем те же последовательности, что и в предыдущем задании
-    Vector x = load_signal_from_bin("convolution_data/x_sequence.bin");
-    Vector y = load_signal_from_bin("convolution_data/y_sequence.bin");
+    Vector x = load_signal_from_bin("../other_files/x_sequence.bin");
+    Vector y = load_signal_from_bin("../other_files/y_sequence.bin");
 
     if (x.empty() || y.empty()) {
         std::cerr << "Не удалось загрузить входные последовательности." << std::endl;
@@ -70,7 +70,7 @@ int main() {
     std::cout << "Свертка вычислена. Размер результата: " << u_fft.size() << std::endl;
 
     // 3. Загружаем эталонный результат (вычисленный напрямую или через NumPy)
-    Vector reference_conv = load_signal_from_bin("convolution_data/numpy_convolution.bin");
+    Vector reference_conv = load_signal_from_bin("../other_files/numpy_convolution.bin");
     if (reference_conv.empty()) {
         std::cerr << "Не удалось загрузить эталонную свертку." << std::endl;
         return 1;

@@ -50,9 +50,9 @@ Vector fft_convolution(Vector x, Vector y) {
 int main() {
     // 1. Загрузка данных
     std::cout << "Загрузка больших сигналов (M=1024, L=1024)..." << std::endl;
-    Vector x = load_signal_from_bin("verification_large_conv/x_1024.bin");
-    Vector y = load_signal_from_bin("verification_large_conv/y_1024.bin");
-    Vector reference_conv = load_signal_from_bin("verification_large_conv/numpy_conv_1024.bin");
+    Vector x = load_signal_from_bin("../other_files/x_1024.bin");
+    Vector y = load_signal_from_bin("../other_files/y_1024.bin");
+    Vector reference_conv = load_signal_from_bin("../other_files/numpy_conv_1024.bin");
 
     if (x.empty() || y.empty() || reference_conv.empty()) {
         std::cerr << "Ошибка загрузки одного из файлов." << std::endl;

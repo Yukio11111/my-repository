@@ -33,20 +33,21 @@ def plot_benchmark(csv_file, title, x_label, output_filename):
     plt.savefig(output_filename)
     print(f"График сохранен в файл '{output_filename}'")
     plt.show()
+data_path = '../other_files/'
 
 # --- Построение графиков для обоих случаев ---
 # Случай 1
 plot_benchmark(
-    'fixed_length_benchmark.csv',
+    f"{data_path}fixed_length_benchmark.csv",
     'Производительность свертки (один сигнал M=512, второй - N)',
     'Длина второго сигнала (N_variable)',
-    'convolution_fixed_length.png'
+    f"{data_path}convolution_fixed_length.png"
 )
 
 # Случай 2
 plot_benchmark(
-    'variable_length_benchmark.csv',
+    f"{data_path}variable_length_benchmark.csv",
     'Производительность свертки (оба сигнала одинаковой длины N)',
     'Длина сигналов (N)',
-    'convolution_variable_length.png'
+    f"{data_path}convolution_variable_length.png"
 )
