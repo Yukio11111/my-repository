@@ -1,0 +1,4 @@
+/workspaces/my-repository/laba6/build/CMakeFiles/run_tests.dir
+/workspaces/my-repository/laba6/build/CMakeFiles/test.dir
+/workspaces/my-repository/laba6/build/CMakeFiles/edit_cache.dir
+/workspaces/my-repository/laba6/build/CMakeFiles/rebuild_cache.dir
