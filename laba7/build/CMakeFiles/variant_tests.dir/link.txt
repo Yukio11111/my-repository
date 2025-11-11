@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/variant_tests.dir/tests/variant.cpp.o -o variant_tests  _deps/catch2-build/src/libCatch2Main.a _deps/catch2-build/src/libCatch2.a 
