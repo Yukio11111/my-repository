@@ -11,7 +11,7 @@ def save_complex_vector(data, filename):
         data_to_write.tofile(f)
     print(f"Saved vector to {filename}")
 
-# --- Параметры ---
+# --- Параметры --- 
 N = 1024  # Длина сигнала 2^10
 SAMPLING_RATE = 4096 # Частота дискретизации
 FREQUENCY = 100 # Частота синусоиды для теста, Гц
