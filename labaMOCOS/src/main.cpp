@@ -12,9 +12,6 @@ void print_vector(const std::string& title, const Vector& vec) {
 }
 
 int main() {
-
-    // 2. Пример с загрузкой из файла
-    std::cout << "\n--- Пример загрузки файла ---" << std::endl;
     
     std::string filename = "../other_files/signal_3Hz_512pts.bin"; 
     
@@ -22,10 +19,8 @@ int main() {
     
     std::cout << "Успешно загружен " << file_signal.size() << " образцы из " << filename << std::endl;
     
-    std::cout << "Performing FFT on file data..." << std::endl;
     Vector file_spectrum = fft(file_signal);
     
-    std::cout << "Performing IFFT to restore signal..." << std::endl;
     Vector file_restored = ifft(file_spectrum);
 
     // Проверка, что сигнал восстановился (с небольшой погрешностью)
@@ -34,7 +29,7 @@ int main() {
         // Считаем сумму абсолютных разностей между исходным и восстановленным сигналом
         error += std::abs(file_signal[i] - file_restored[i]);
     }
-    std::cout << "Total restoration error after IFFT: " << std::scientific << error << std::endl;
+    std::cout << "Полная ошибка восстановления после IFFT: " << std::scientific << error << std::endl;
 
 
     return 0;

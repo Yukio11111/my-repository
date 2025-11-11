@@ -11,7 +11,6 @@
 using Complex = std::complex<double>;
 using Vector = std::vector<Complex>;
 
-// Константа PI для вычислений
 const double PI = 3.14159265358979323846;
 
 /**
@@ -51,36 +50,47 @@ void bit_reversal_permutation(Vector& data) {
  * @param inverse Если false - прямое БПФ, если true - обратное БПФ.
  */
 void fft_core(Vector& data, bool inverse) {
-    int n = data.size();
-    if (n <= 1) return;
+    int N = data.size();
+    if (N <= 1) return;
 
-    // Шаг 1: Двоично-инверсная перестановка на входе
-    bit_reversal_permutation(data);
+    // Шаг 1: Итеративное вычисление "бабочек"
+    // Внешний цикл по стадиям (управляет размером блока)
+    for (int len = N; len >= 2; len /= 2) {
+        int half_len = len / 2;
+        
+        // Поворачивающий множитель для текущей стадии
+        double angle = -2.0 * PI / len * (inverse ? -1.0 : 1.0);
+        Complex w_len(cos(angle), sin(angle));
 
-    // Шаг 2: Итеративное вычисление "бабочек"
-    // Внешний цикл по стадиям (log2(N) стадий)
-    for (int len = 2; len <= n; len <<= 1) {
-        double angle = 2 * PI / len * (inverse ? 1.0 : -1.0);
-        Complex wlen(cos(angle), sin(angle)); // Поворачивающий множитель W_len
+        // Цикл по блокам
+        for (int i = 0; i < N; i += len) {
+            Complex w(1.0, 0.0); // W^k, начинается с W^0 = 1
 
-        // Внутренний цикл по блокам
-        for (int i = 0; i < n; i += len) {
-            Complex w(1);
             // Цикл по "бабочкам" внутри блока
-            for (int j = 0; j < len / 2; ++j) {
-                Complex u = data[i + j];
-                Complex v = data[i + j + len / 2] * w;
-                data[i + j] = u + v;
-                data[i + j + len / 2] = u - v;
-                w *= wlen; // Обновляем поворачивающий множитель для следующей бабочки
+            for (int j = 0; j < half_len; ++j) {
+                int idx1 = i + j;
+                int idx2 = i + j + half_len;
+
+                Complex a = data[idx1];
+                Complex b = data[idx2];
+                
+                // Выполняем "бабочку" DIF:
+                data[idx1] = a + b;
+                data[idx2] = (a - b) * w;
+
+                // Обновляем поворачивающий множитель для следующей бабочки
+                w *= w_len;
             }
         }
     }
 
+    // Шаг 2: Двоично-инверсная перестановка на ВЫХОДЕ
+    bit_reversal_permutation(data);
+
     // Шаг 3: Масштабирование для обратного БПФ
     if (inverse) {
-        for (int i = 0; i < n; ++i) {
-            data[i] /= n;
+        for (int i = 0; i < N; ++i) {
+            data[i] /= N;
         }
     }
 }
