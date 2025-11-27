@@ -1,0 +1,4 @@
+/workspaces/my-repository/laba8/build/CMakeFiles/tests.dir
+/workspaces/my-repository/laba8/build/CMakeFiles/test.dir
+/workspaces/my-repository/laba8/build/CMakeFiles/edit_cache.dir
+/workspaces/my-repository/laba8/build/CMakeFiles/rebuild_cache.dir
